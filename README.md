@@ -1,10 +1,10 @@
 # dockers
 Automatically sets environment I prefer on given docker
 
-###Requirements
+### Requirements
 Must install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretch) first.
 
-###Instructions
+### Instructions
 ```
 cd [DOCKER_YOU_WANT]
 
