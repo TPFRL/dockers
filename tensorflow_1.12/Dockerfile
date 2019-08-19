@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:19.07-py3
+FROM nvcr.io/nvidia/tensorflow:19.01-py3
     RUN apt-get update
 	RUN apt-get install -y tmux zsh silversearcher-ag ctags software-properties-common 
     RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
