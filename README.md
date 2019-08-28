@@ -2,13 +2,7 @@
 Automatically sets environment I prefer on given docker
 
 ### Requirements
-Must install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker#ubuntu-16041804-debian-jessiestretch) first.
-
-Then need to get API Key from NVIDIA GPU CLOUD, and input that API key with
-
-```
-ngc config set
-```
+Updated : install Docker and nvidia-driver. that's all
 
 ### Instructions
 ```
@@ -16,7 +10,7 @@ cd [DOCKER_YOU_WANT]
 
 docker build -t [IMAGE_NAME] .
 
-docker run --runtime=nvidia --ipc=host --name=[CONTAINER_NAME] -v [HOST_DATA_PATH]:/data -v [HOST_CODE_PATH]:/workspace  -it [IMAGE_NAME]
+docker run --ipc=host -p [HOST_PORT_NAME_FOR_DOCKER]:7777 --name=[CONTAINER_NAME] -v [HOST_DATA_PATH]:/data -v [HOST_CODE_PATH]:/workspace  -it [IMAGE_NAME]
 ```
 
 for example,
@@ -25,5 +19,5 @@ cd pytorch
 
 docker build -t torch120 .
 
-docker run --runtime=nvidia --ipc=host --name=test_torch -v /hdd/data:/data -v /home/user:/workspace -it torch120
+docker run --ipc=host -p [HOST_PORT_NAME_FOR_DOCKER]:7777 --name=test_torch -v /hdd/data:/data -v /home/user:/workspace -it torch120
 ```
