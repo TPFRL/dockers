@@ -8,4 +8,4 @@ FROM nvcr.io/nvidia/tensorflow:19.01-py3
     RUN chmod +x envset.sh
     RUN zsh envset.sh
     RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-    CMD ["zsh"]
+    ENTRYPOINT service ssh restart && zsh
