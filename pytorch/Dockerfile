@@ -8,5 +8,5 @@ FROM nvcr.io/nvidia/pytorch:19.07-py3
     RUN chmod +x envset.sh
     RUN zsh envset.sh
     RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-    ENTRYPOINT ["service ssh restart"]
-    CMD ["zsh"]
+    ENTRYPOINT "service ssh restart"
+    CMD "zsh"
