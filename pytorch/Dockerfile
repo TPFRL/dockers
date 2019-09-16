@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:19.07-py3
+FROM nvcr.io/nvidia/pytorch:19.08-py3
     RUN apt-get update
     
     # support ssh connection
