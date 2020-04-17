@@ -1,7 +1,13 @@
 # Base image must at least have pytorch and CUDA installed.
-ARG BASE_IMAGE=nvcr.io/nvidia/pytorch:18.12-py3
+ARG BASE_IMAGE=nvcr.io/nvidia/caffe:19.02-py2
 FROM $BASE_IMAGE
 ARG BASE_IMAGE
+
+# install anaconda
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+RUN bash Miniconda3-latest-Linux-x86_64.sh -b -p=/opt/conda
+RUN rm Miniconda3-latest-Linux-x86_64.sh
+ENV PATH /opt/conda/bin:$PATH
 
 # prepare to install apex
 WORKDIR /tmp/unique_for_apex
